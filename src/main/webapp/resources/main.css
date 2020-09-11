@@ -1,0 +1,9 @@
+
+
+h1 {color: black}
+h1 {font-size: 60px;
+    text-align: center;}
+h1 {background-color: azure}
+body { background-image: url(image1.jpg); }
+body {background-position: center}
+body {background-size: cover}

@@ -1,0 +1,6 @@
+INSERT  INTO wagons (type) VALUES ('Tank'),('Box'),('Shimms'),('Car wagon'), ('Hopper'),('Platform');
+INSERT  INTO designers (name, surname,email,phone_number ) VALUES ('Wojciech','Pisarek','w.pisarek@gbrx.com','2324'),('Wojciech','Pisarek','w.pisarek@gbrx.com','2324'),('Wojciech','Pisarek','w.pisarek@gbrx.com','2324'),('Wojciech','Pisarek','w.pisarek@gbrx.com','2324');
+INSERT  INTO technologists (name, surname,email,phone_number ) VALUES ('Wojciech','Kowalski','w.kowalski@gbrx.com','2325'),('Wojciech','Kowalski','w.kowalski@gbrx.com','2325'),('Wojciech','Kowalski','w.kowalski@gbrx.com','2325'),('Wojciech','Kowalski','w.kowalski@gbrx.com','2325');
+INSERT  INTO painters (name, surname,email,phone_number ) VALUES ('Małgorzata','Ciborska','m.ciborska@gbrx.com','2326'),('Małgorzata','Ciborska','m.ciborska@gbrx.com','2326'),('Małgorzata','Ciborska','m.ciborska@gbrx.com','2326'),('Małgorzata','Ciborska','m.ciborska@gbrx.com','2326');
+INSERT  INTO buyers (name, surname,email,phone_number ) VALUES ('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327');
+INSERT INTO offers (rfq,lead_time,buyer_id,designer_id,painter_id,technologist_id,wagon_id) VALUES (111,'2020-10-10',1,1,1,1,1);
