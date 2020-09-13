@@ -4,3 +4,6 @@ INSERT  INTO technologists (name, surname,email,phone_number ) VALUES ('Wojciech
 INSERT  INTO painters (name, surname,email,phone_number ) VALUES ('Małgorzata','Ciborska','m.ciborska@gbrx.com','2326'),('Małgorzata','Ciborska','m.ciborska@gbrx.com','2326'),('Małgorzata','Ciborska','m.ciborska@gbrx.com','2326'),('Małgorzata','Ciborska','m.ciborska@gbrx.com','2326');
 INSERT  INTO buyers (name, surname,email,phone_number ) VALUES ('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327');
 INSERT INTO offers (rfq,lead_time,buyer_id,designer_id,painter_id,technologist_id,wagon_id) VALUES (111,'2020-10-10',1,1,1,1,1);
+INSERT INTO role (name) VALUES ('admin'),('designer'),('technologist'),('painter'),('buyer');
+INSERT INTO user (username,password,enabled) VALUES ('admin','123',1),('designer','234',1),('technologist','345',1),('painter','456',1),('buyer','567',1);
+INSERT INTO user_role (user_id,role_id) VALUES (1,1),(2,2),(3,3),(4,4),(5,5);

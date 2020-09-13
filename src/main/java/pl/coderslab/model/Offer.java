@@ -8,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Getter
@@ -22,11 +24,23 @@ public class Offer {
 
     @Column(nullable = false,
             unique = true)
+    @NotNull
     private Integer rfq;
 
-    @Future
+
+    //    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
+    @Transient
+    String date;
+
     @Column(nullable = false)
-    private Date leadTime;
+    LocalDate leadTime=LocalDate.now();
+
+     @PrePersist
+     public void dateConvert (){
+         leadTime=LocalDate.parse(date);
+     }
+
+
 
     @OneToOne
     @JoinColumn(name = "wagon_id",
@@ -35,22 +49,22 @@ public class Offer {
 
     @OneToOne
     @JoinColumn(name = "designer_id",
-            unique = true)
+            unique = false)
     private Designer designer;
 
     @OneToOne
     @JoinColumn(name = "technologist_id",
-            unique = true)
+            unique = false)
     private Technologist technologist;
 
     @OneToOne
     @JoinColumn(name = "painter_id",
-            unique = true)
+            unique = false)
     private Painter painter;
 
     @OneToOne
     @JoinColumn(name = "buyer_id",
-            unique = true)
+            unique = false)
     private Buyer buyer;
 
 }
