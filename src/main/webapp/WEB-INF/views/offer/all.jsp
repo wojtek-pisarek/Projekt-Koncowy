@@ -35,6 +35,11 @@
         <td>${offer.technologist.email}</td>
         <td>${offer.painter.email}</td>
         <td>${offer.buyer.email}</td>
+        <td>
+            <a href="<c:url value="/offer/update?id=${offer.id}"/>">update</a>
+            <a href="<c:url value="/offer/delete?id=${offer.id}"/>">delete</a>
+            <a href="<c:url value="/offer/add"/>">add</a>
+        </td>
         </c:forEach>
 </table>
 </body>

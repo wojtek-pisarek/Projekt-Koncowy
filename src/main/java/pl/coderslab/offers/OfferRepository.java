@@ -7,5 +7,7 @@ import java.util.List;
 
 public interface OfferRepository extends JpaRepository<Offer, Long> {
     public List<Offer> findAll();
+    public List<Offer> findAllByDesignerId(Long id);
+
     
 }

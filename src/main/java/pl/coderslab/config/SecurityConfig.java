@@ -3,6 +3,7 @@ package pl.coderslab.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -12,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import pl.coderslab.user.SpringDataUserDetailsService;
 
 import javax.sql.DataSource;
-
+@EnableGlobalMethodSecurity(securedEnabled = true)
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -35,7 +36,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessUrl("/offer/main")
                 .permitAll()
                 .and().exceptionHandling().accessDeniedPage("/403");
-
     }
 
     @Override
@@ -51,22 +51,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new AbstractPasswordEncoder() {
-            @Override
-            public String encode(CharSequence charSequence) {
-                return "123";
-            }
+        return new BCryptPasswordEncoder();
 
-            @Override
-            public boolean matches(CharSequence charSequence, String s) {
-                return true;
-            }
-
-            @Override
-            protected byte[] encode(CharSequence charSequence, byte[] bytes) {
-                return new byte[0];
-            }
-        };
     }
 
     @Bean

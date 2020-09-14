@@ -5,5 +5,5 @@ INSERT  INTO painters (name, surname,email,phone_number ) VALUES ('Małgorzata',
 INSERT  INTO buyers (name, surname,email,phone_number ) VALUES ('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327'),('Grzegorz','Kudzia','g.kudzia@gbrx.com','2327');
 INSERT INTO offers (rfq,lead_time,buyer_id,designer_id,painter_id,technologist_id,wagon_id) VALUES (111,'2020-10-10',1,1,1,1,1);
 INSERT INTO role (name) VALUES ('admin'),('designer'),('technologist'),('painter'),('buyer');
-INSERT INTO user (username,password,enabled) VALUES ('admin','123',1),('designer','234',1),('technologist','345',1),('painter','456',1),('buyer','567',1);
+INSERT INTO user (username,password,enabled) VALUES ('admin','$2a$10$kLVxovlJyGSgZh4Ymb.WU.X5iNVd/zJdi7U51ETgH5ZHmmJWLWyWq',1),('designer','$2a$10$cJIbJMDtijV2w5ZAOCTgF.5tcFY6Z3Yx/ZagyBbXW1QSr5.j.zt9u',1),('technologist','$2a$10$7039C88yUQH1cA0dN7mp3uiNHSQX/LJRLmTu69aWDZdr6cKlU6mqS',1),('painter','$2a$10$ugMtua67g2ZQr6h.0z/D.urJf7JJNFHwQX.JM1r1oMJWZGaruyP26',1),('buyer','$2a$10$0CgGpLlRDG.8rwK9.pxdC.7HOhqrX0pndsEtYpHnrd.f503SohiNO',1);
 INSERT INTO user_role (user_id,role_id) VALUES (1,1),(2,2),(3,3),(4,4),(5,5);
