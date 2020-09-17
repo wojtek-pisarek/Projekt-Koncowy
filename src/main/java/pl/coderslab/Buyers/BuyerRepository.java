@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface BuyerRepository extends JpaRepository<Buyer,Long> {
 public List<Buyer> findAll();
+
 }

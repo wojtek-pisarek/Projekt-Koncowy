@@ -6,9 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.coderslab.model.*;
+import pl.coderslab.offers.OfferRepository;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -20,6 +22,7 @@ import java.util.List;
 @Controller
 public class WagonController {
      private final WagonRepository wagonRepository;
+     private final OfferRepository offerRepository;
 
     @GetMapping("/all")
     public String prepareAllPage(Model model) {
@@ -46,6 +49,13 @@ public class WagonController {
         wagonRepository.save(wagon);
         log.error("Entity{} has been saved.", wagon);
         return "redirect:/wagon/all";
+    }
+
+    @GetMapping("/{id}/offer")
+    public String prepareUserTweetsPage(@PathVariable Long id, Model model) {
+        final List<Offer> offersList = offerRepository.findAllByWagonId(id);
+        model.addAttribute("offersList", offersList);
+        return "/wagon/offer";
     }
 
 

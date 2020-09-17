@@ -31,7 +31,6 @@ private final OfferRepository offerRepository;
     @GetMapping("/{id}/offer")
     public String prepareUserTweetsPage(@PathVariable Long id, Model model) {
         final List<Offer> offersList = offerRepository.findAllByDesignerId(id);
-
         model.addAttribute("offersList", offersList);
         return "/designer/offer";
     }

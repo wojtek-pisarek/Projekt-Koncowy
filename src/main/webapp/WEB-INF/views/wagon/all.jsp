@@ -25,6 +25,10 @@
     <tr>
         <td>${wagon.id}</td>
         <td>${wagon.type}</td>
+        <td>
+            <a href="<c:url value="/wagon/${wagon.id}/offer"/>">all wagons offer</a>
+
+        </td>
         </c:forEach>
 </table>
 </body>
