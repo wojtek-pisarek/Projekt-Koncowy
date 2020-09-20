@@ -30,6 +30,9 @@
         <td>${designer.email}</td>
         <td>${designer.phoneNumber}</td>
         <td>
+            <a href="<c:url value="/designer/add"/>">Add Designer</a>
+            <a href="<c:url value="/designer/delete?id=${designer.id}"/>">Delete Designer</a>
+            <a href="<c:url value="/designer/update?id=${designer.id}"/>">Update Designer</a>
             <a href="<c:url value="/designer/${designer.id}/offer"/>">all designer offer</a>
         </td>
         </c:forEach>

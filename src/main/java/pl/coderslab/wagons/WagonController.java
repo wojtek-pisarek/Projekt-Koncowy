@@ -32,14 +32,14 @@ public class WagonController {
     }
 
     @GetMapping("/add")
-    public String prepareAddPage(Model model) {
+    public String prepareAddWagon(Model model) {
         model.addAttribute(new Wagon());
         return "/wagon/add";
     }
 
     @PostMapping("/add")
     @Transactional
-    public String processAddPage(@Valid Wagon wagon, BindingResult result) {
+    public String processAddWagon(@Valid Wagon wagon, BindingResult result) {
         log.debug("Entity to save: {}", wagon);
         if (result.hasErrors()) {
             log.error("Entity {} fails validation.", wagon);

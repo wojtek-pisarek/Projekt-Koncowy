@@ -66,7 +66,6 @@ public class OfferController {
     @PostMapping("/add")
     @Transactional
     public String processAddPage(@Valid Offer offer, BindingResult result) {
-
         log.debug("Entity to save: {}", offer);
         if (result.hasErrors()) {
             log.error("Entity {} fails validation.", offer);
@@ -129,7 +128,7 @@ public class OfferController {
     }
 
     @GetMapping("/delete")
-    public String prepareDeletePage(@RequestParam Long id, Model model) {
+    public String prepareDeleteOffer(@RequestParam Long id, Model model) {
         log.debug("Preparing to delete user with id {}...", id);
         final Optional<Offer> toDelete = offerRepository.findById(id);
         if (toDelete.isEmpty()) {
@@ -143,7 +142,7 @@ public class OfferController {
 
     @PostMapping("/delete")
     @Transactional
-    public String processDeletePage(Offer offer) {
+    public String processDeleteOffer(Offer offer) {
         final Optional<Offer> toDelete = offerRepository.findById(offer.getId());
         if (toDelete.isEmpty()) {
             log.warn("Entity {} does not exist in Db!", offer);
