@@ -11,8 +11,10 @@
 <html>
 <head>
     <title>Delete Buyer</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/buyers.jsp" %>
 <h3>Are you sure you want to remove ${buyer.email}? </h3>
 <form:form method="post" modelAttribute="buyer">
     <form:hidden path="id"/>

@@ -7,10 +7,13 @@
 --%>
 <header class="page-header">
     <nav class="navbar navbar-expand-lg justify-content-around">
-        <a href="/offer/main" class="navbar-brand main-logo">
+        <a href="/buyer/all" class="navbar-brand main-logo">
             Buyers <span>Greenbrier Europe</span>
         </a>
         <ul class="nav nounderline text-uppercase">
+            <li class="nav-item ml-4">
+                <a class="nav-link color-header" href="/buyer/add">Add new Buyer</a>
+            </li>
         </ul>
     </nav>
 </header>

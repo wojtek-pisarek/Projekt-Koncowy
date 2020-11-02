@@ -9,12 +9,19 @@
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
-<head>b
+<head>
     <title>Buyers offers</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/buyers.jsp" %>
+<style> tr, td, th,table {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+</style>
 <table>
-    <caption>Buyers offers</caption>
     <thead>
     <th scope="col">id</th>
     <th scope="col">rfq</th>
