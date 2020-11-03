@@ -11,8 +11,10 @@
 <html>
 <head>
     <title>Delete Technologist</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/technologists.jsp" %>
 <h3>Are you sure you want to remove ${technologist.email}? </h3>
 <form:form method="post" modelAttribute="technologist">
     <form:hidden path="id"/>

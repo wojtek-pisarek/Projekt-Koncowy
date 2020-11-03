@@ -11,13 +11,20 @@
 <html>
 <head>
     <title>Update offers</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/offers.jsp" %>
+<style> tr, td, table {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: right;
+}
 <form:form method="post" modelAttribute="offer">
     <form:label path="rfq">rfq:<form:input path="rfq"/></form:label>
-    <form:errors path="rfq"/><br/>
+    <form:errors path="rfq"/>
     <form:label path="date">leadTime:<form:input type="date" path="date" element="span"/></form:label>
-    <form:errors path="date"/><br/>
+    <form:errors path="date"/>
     <form:label path="wagon">wagon<form:select path="wagon" items="${wagons}" itemValue="id"  itemLabel="type"/> </form:label>
     <form:errors path="wagon"/>
     <form:label path="designer">designer<form:select path="designer" items="${designers}" itemValue="id" itemLabel="email"/> </form:label>

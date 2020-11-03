@@ -11,8 +11,10 @@
 <html>
 <head>
     <title>Delete Designer</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/designers.jsp" %>
 <h3>Are you sure you want to remove ${designer.email}? </h3>
 <form:form method="post" modelAttribute="designer">
     <form:hidden path="id"/>

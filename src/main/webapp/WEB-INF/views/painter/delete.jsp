@@ -11,8 +11,10 @@
 <html>
 <head>
     <title>Delete Painter</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/painters.jsp" %>
 <h3>Are you sure you want to remove ${painter.email}? </h3>
 <form:form method="post" modelAttribute="painter">
     <form:hidden path="id"/>

@@ -11,8 +11,16 @@
 <html>
 <head>
     <title>Technologists offers</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/technologists.jsp" %>
+<style> tr, td, th,table {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+</style>
 <table>
     <caption>Technologists offers</caption>
     <thead>

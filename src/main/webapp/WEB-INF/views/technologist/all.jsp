@@ -11,10 +11,16 @@
 <html>
 <head>
     <title>Technologists all</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/technologists.jsp" %>
+<style> tr,th,td { border: 1px solid black;
+    padding: 5px;
+    text-align: center     ;
+}
+</style>
 <table>
-    <caption>Technologist List</caption>
     <thead>
     <th scope="col">id</th>
     <th scope="col">name</th>
@@ -30,8 +36,9 @@
         <td>${technologist.email}</td>
         <td>${technologist.phoneNumber}</td>
         <td>
-            <a href="<c:url value="/technologist/${technologist.id}/offer"/>">all technologists offer</a>
-
+            <a href="<c:url value="/buyer/delete?id=${technologist.id}"/>">Delete Technologist</a>
+            <a href="<c:url value="/buyer/update?id=${technologist.id}"/>">Update Technologist</a>
+            <a href="<c:url value="/technologist/${technologist.id}/offer"/>">All Technologists Offer</a>
         </td>
         </c:forEach>
 </table>

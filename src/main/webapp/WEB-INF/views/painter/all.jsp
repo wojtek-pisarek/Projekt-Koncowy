@@ -11,10 +11,17 @@
 <html>
 <head>
     <title>Painters all</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
 <table>
-    <caption>Painters List</caption>
+    <%@include file="/WEB-INF/views/fragments/painters.jsp" %>
+    <style> tr,th,td { border: 1px solid black;
+        padding: 5px;
+        text-align: center     ;
+    }
+    </style>
+    <table>
     <thead>
     <th scope="col">id</th>
     <th scope="col">name</th>
@@ -30,7 +37,9 @@
         <td>${painter.email}</td>
         <td>${painter.phoneNumber}</td>
         <td>
-            <a href="<c:url value="/painter/${painter.id}/offer"/>">all painters offer</a>
+            <a href="<c:url value="/painter/delete?id=${painter.id}"/>">Delete Painter</a>
+            <a href="<c:url value="/painter/update?id=${painter.id}"/>">Update Painter</a>
+            <a href="<c:url value="/painter/${painter.id}/offer"/>">all Painters offer</a>
 
         </td>
         </c:forEach>

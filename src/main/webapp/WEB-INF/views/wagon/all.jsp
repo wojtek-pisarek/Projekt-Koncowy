@@ -7,16 +7,21 @@
 --%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<c:url value="/resources/all.css" var="allcss" />
-<link href="${allcss}" rel="stylesheet" />
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Wagons list</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/wagons.jsp" %>
+<style> tr,th,td { border: 1px solid black;
+    padding: 5px;
+    text-align: center     ;
+}
+</style>
 <table>
-    <caption>Wagons list</caption>
+<table>
     <thead>
     <th scope="col">id</th>
     <th scope="col">type</th>
@@ -26,8 +31,9 @@
         <td>${wagon.id}</td>
         <td>${wagon.type}</td>
         <td>
-            <a href="<c:url value="/wagon/${wagon.id}/offer"/>">all wagons offer</a>
-
+            <a href="<c:url value="/wagon/${wagon.id}/offer"/>">All Wagons Offer</a>
+            <a href="<c:url value="/wagon/delete?id=${wagon.id}"/>">Delete Wagon</a>
+            <a href="<c:url value="/wagon/update?id=${wagon.id}"/>">Update Wagon</a>
         </td>
         </c:forEach>
 </table>

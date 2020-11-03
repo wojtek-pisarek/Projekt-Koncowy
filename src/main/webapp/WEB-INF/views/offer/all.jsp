@@ -9,12 +9,16 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <title>All Offers</title>
-<c:url value="/resources/all.css" var="allcss" />
-<link href="${allcss}" rel="stylesheet" />
+<%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
 <table>
-    <caption>Offerts list</caption>
+    <%@include file="/WEB-INF/views/fragments/offers.jsp" %>
+    <style> tr,th,td { border: 1px solid black;
+        padding: 5px;
+        text-align: center     ;
+    }
+    </style>
     <thead>
     <th scope="col">id</th>
     <th scope="col">rfq</th>
@@ -38,7 +42,6 @@
         <td>
             <a href="<c:url value="/offer/update?id=${offer.id}"/>">update</a>
             <a href="<c:url value="/offer/delete?id=${offer.id}"/>">delete</a>
-            <a href="<c:url value="/offer/add"/>">add</a>
         </td>
         </c:forEach>
 </table>

@@ -1,16 +1,16 @@
 <%--
   Created by IntelliJ IDEA.
   User: wojciech
-  Date: 13.09.2020
-  Time: 10:51
+  Date: 03.11.2020
+  Time: 21:15
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Wagon add</title>
+    <title>Update wagon</title>
     <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
@@ -23,8 +23,10 @@
 </style>
 <form:form method="post" modelAttribute="wagon">
     <table>
-        <td><form:label path="type">type:<form:input path="type"/></form:label></td>
-        <form:errors path="type"/>
+        <tr>
+            <td><form:label path="type">name:<form:input path="type"/></form:label></td>
+            <form:errors path="type"/>
+        </tr>
     </table>
     <input type="submit">
 </form:form>

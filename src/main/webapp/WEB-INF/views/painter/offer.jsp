@@ -11,10 +11,17 @@
 <html>
 <head>
     <title>Painters offers</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/painters.jsp" %>
+<style> tr, td, th,table {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+</style>
 <table>
-    <caption>Painters offers</caption>
     <thead>
     <th scope="col">id</th>
     <th scope="col">rfq</th>

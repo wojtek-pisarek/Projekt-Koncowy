@@ -11,10 +11,17 @@
 <html>
 <head>
     <title>Wagon offers</title>
+    <%@include file="/WEB-INF/views/fragments/head_styles.jsp" %>
 </head>
 <body>
+<%@include file="/WEB-INF/views/fragments/wagons.jsp" %>
+<style> tr, td, th,table {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+}
+</style>
 <table>
-    <caption>Wagons offers</caption>
     <thead>
     <th scope="col">id</th>
     <th scope="col">rfq</th>
